@@ -1,7 +1,16 @@
 import spacy
 import numpy as np
 from nltk.corpus import stopwords
+from pathlib import Path
 
+
+
+def read_pdfs(path : str):
+    # returns all file paths that has .pdf as extension in the specified directory
+    pdf_search = Path(path).glob("*.pdf")
+    # convert the glob generator out put to list
+    # skip this if you are comfortable with generators and pathlib
+    return [str(file.absolute()) for file in pdf_search]
 
 def preprocess(document):
     accum_text = ''
