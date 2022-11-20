@@ -2,8 +2,27 @@ import spacy
 import numpy as np
 from nltk.corpus import stopwords
 from pathlib import Path
+import fitz
 
-
+def pdfs_info_dict(path : str):
+    pdf_files = read_pdfs(path)
+    pdfs_text_info = {}
+    
+    pdf_index = 0
+    for pdf in pdf_files:
+        with fitz.open(pdf) as document:
+            words, nouns = preprocess(document)
+            pdfs_text_info[pdf_index] = words, nouns
+            print("\n\n\n\n\n")
+            print(words)
+            print("\n\n\n\n\n")
+            print(nouns)
+            print("\n\n\n\n\n")
+            print(f'Finished document {pdf_index}')
+        pdf_index+=1
+    
+    print("Finished")
+    return pdfs_text_info
 
 def read_pdfs(path : str):
     # returns all file paths that has .pdf as extension in the specified directory
@@ -37,7 +56,7 @@ def preprocess(document):
     return [word for word in words if word.casefold() not in stop_words], [noun for noun in nouns]
 
 def remove_punctuation(text):
-    unnecessary_symbols = "!\"#$%&()*+-./:;<=>?@[\]^_`{|}~\n"
+    unnecessary_symbols = "¡!\"#$%&()*+-./:;<=>¿?@[\]^_`{|}~\n"
     for i in range(len(unnecessary_symbols)):
         text = np.char.replace(text, unnecessary_symbols[i], ' ')
         text = np.char.replace(text, "  ", " ")
