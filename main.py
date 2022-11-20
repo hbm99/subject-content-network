@@ -1,25 +1,15 @@
 import fitz
-import spacy
-from nltk.corpus import stopwords
+from utils import preprocess
 
-doc = fitz.open("pdfs/Conferencia-00-MN-CC-2021-(con-imagenes).pdf")
 
-accum_text = ''
-for i in range(doc.page_count):
-    page = doc.load_page(i)
-    text = page.get_text('text')
-    accum_text += text
+if __name__ == '__main__':
+    document = fitz.open("pdfs/Conferencia-00-MN-CC-2021-(con-imagenes).pdf")
     
-stop_words = set(stopwords.words("spanish"))
-
-nlp = spacy.load('es_core_news_md')
-
-spacy_document = nlp(accum_text)
-spacy_words_list = []
-for token in spacy_document:
-    if token.pos_ == "NOUN":
-        spacy_words_list.append(token.lemma_.lower())
+    words, nouns = preprocess(document)
     
-filtered_spacy_list = [word for word in spacy_words_list if word.casefold() not in stop_words]
-
-print(filtered_spacy_list)
+    print(words)
+    
+    print("\n\n\n\n\n")
+    
+    print(nouns)
+    
