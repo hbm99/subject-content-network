@@ -24,8 +24,7 @@ class Graph:
                         if not self.graph.has_edge(content, other_content):
                             self.graph.add_edge(content, other_content, weight = weight_value)
                         else:
-                            testing_var = self.graph[content][other_content]['weight']
-                            testing_var += weight_value
+                            self.graph[content][other_content]['weight'] += weight_value
         
                     
     def fill_content_distance(self, words : List[str], distance : int):
