@@ -3,12 +3,12 @@ from typing import Dict, Tuple, List
 from content import Content
 
 class Graph:
-    def __init__(self, pdfs_info : Dict[int, Tuple[List[str], List[str]]], contents : List[Content], distance_to_ponderate : int = 300) -> None:
+    def __init__(self, pdfs_info : Dict[int, Tuple[List[str], List[str]]], contents : List[Content], distance_to_ponderate : int = 500) -> None:
         self.graph = nx.Graph()
         self.graph.add_nodes_from(contents)
-        self.ponderate(pdfs_info)
+        self.ponderate(pdfs_info, distance_to_ponderate)
     
-    def ponderate(self, pdfs_info : Dict[int, Tuple[List[str], List[str]]], distance_to_ponderate : int = 300):
+    def ponderate(self, pdfs_info : Dict[int, Tuple[List[str], List[str]]], distance_to_ponderate : int):
         
         
         for document in pdfs_info.values():
