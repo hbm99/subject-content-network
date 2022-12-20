@@ -153,17 +153,17 @@ MSc. Fernando Raúl Rodríguez Flores, \emph{Facultad de Matemática y Computaci
 %-----------------------------------------------------------------------------------
 \section{Introducción}\label{sec:intro}
 %-----------------------------------------------------------------------------------
-  Cada persona es consciente de las poderosas características de las redes que habitamos, incluso si no se pudiera comprender completamente las fuerzas detrás de ellas. Un encuentro casual en una fiesta revela a un amigo común que vive a miles de kilómetros de distancia. El folclore nos dice que la mejor manera de encontrar un nuevo trabajo es "conectarse" a través de conocidos y amigos de amigos. Todos nosotros hemos navegado por la web y de repente nos hemos dado cuenta de que solo unos pocos enlaces nos han alejado mucho de nuestras intenciones originales.
+  Cada persona es consciente de las poderosas características de las redes que se habitan, incluso si no se pudiera comprender completamente las fuerzas detrás de ellas. Un encuentro casual en una fiesta revela a un amigo común que vive a miles de kilómetros de distancia. El folclore nos dice que la mejor manera de encontrar un nuevo trabajo es "conectarse" a través de conocidos y amigos de amigos. Se ha navegado por la web y se percibe que solo unos pocos enlaces se han alejado mucho de las intenciones originales.
 
   El mundo se encuentra altamente interconectado, en muchas escalas diferentes. Las conexiones son de lo que se tratan las redes: dos nodos están unidos por una arista cuando están relacionados de una manera específica; las personas están atadas a sus amigos, las ciudades están conectadas por carreteras y rutas aéreas, la flora y la fauna están unidas en una red alimentaria, los países están involucrados en relaciones comerciales; pero no todas las redes son físicas: la World Wide Web es una red virtual de información.
 
-  Hasta hace poco, pensar en redes a gran escala era intratable. Diferentes campos reaccionaron a esta deficiencia a su manera. Los sociólogos se limitaron a conjuntos de datos pequeños (menos de 50 personas). Los matemáticos se centraron en modelos puramente estéticos libres de aplicaciones. Los científicos utilizaron modelos simplificados que ignoraban las redes subyacentes. La era de la información moderna ha producido una gran cantidad de datos sobre las complejas redes que unen a las personas. En respuesta, ha surgido el campo de la ciencia de redes, a partir de las matemáticas, la informática, la sociología, la economía y las ciencias.
+  Hasta hace poco, pensar en redes a gran escala era intratable. Diferentes campos reaccionaron a esta deficiencia a su manera. Los sociólogos se limitaron a conjuntos de datos pequeños (menos de 50 personas). Los matemáticos se centraron en modelos puramente estéticos libres de aplicaciones. Los científicos utilizaron modelos simplificados que ignoraban las redes subyacentes. La era de la información moderna ha producido una gran cantidad de datos sobre las complejas redes que unen a las personas. En respuesta, ha surgido el campo de la Ciencia de Redes, a partir de las matemáticas, la informática, la sociología, la economía y las ciencias.
 
-  Las últimas dos décadas han sido testigo del desarrollo de una metodología coherente para analizar, comprender e interpretar datos de red. La ciencia de redes es altamente interdisciplinaria: el campo sintetiza múltiples tradiciones para lidiar con la comprensión de la estructura de las redes y cómo esta estructura afecta las interacciones dinámicas entre sus nodos.
+  Las últimas dos décadas han sido testigo del desarrollo de una metodología coherente para analizar, comprender e interpretar datos de red. La Ciencia de Redes es altamente interdisciplinaria: el campo sintetiza múltiples tradiciones para lidiar con la comprensión de la estructura de las redes y cómo esta estructura afecta las interacciones dinámicas entre sus nodos.
   
-  La idea surge a partir de la \href{https://networkofthrones.wordpress.com/}{modelación} hecha por \href{https://mathbeveridge.github.io/index.html}{Andrew Beveridge}, profesor de Macalester College, St Paul, MN. 
+  La idea del proyecto surge a partir de la \href{https://networkofthrones.wordpress.com/}{modelación} hecha por \href{https://mathbeveridge.github.io/index.html}{Andrew Beveridge}, profesor de Macalester College, St Paul, MN. 
   
-  Dicha modelación es sobre la famosa serie "Game of Thrones.". Para su análisis, obtuvo los datos de las novelas de George R. R. Martin: “A Song of Ice and Fire.”. 
+  Dicha modelación se basa en los personajes de la famosa serie "Game of Thrones.". Para su análisis, obtuvo los datos de las novelas de George R. R. Martin: “A Song of Ice and Fire.”. 
 %===================================================================================
 
 
@@ -180,7 +180,7 @@ MSc. Fernando Raúl Rodríguez Flores, \emph{Facultad de Matemática y Computaci
 %-----------------------------------------------------------------------------------
 	\subsection{Procesamiento de lenguaje natural}\label{sub:results}
 %-----------------------------------------------------------------------------------
-        El procesamiento de lenguaje natural converge al procesamiento de los archivos en formato \emph{pdf}. Se sabe de la heterogeneidad de los documentos en cuestión.
+        El procesamiento de lenguaje natural converge al procesamiento de los archivos en formato \emph{pdf}, dificultada por la conocida  heterogeneidad de los documentos en cuestión.
         
         \subsubsection{De \emph{PDF} a \emph{PYTHON}}
 
@@ -230,7 +230,7 @@ def read_pdfs(path : str):
 
                 \item Stemming: Este método busca relacionar palabras con igual significado pero que difieren en cuanto a la escritura, por tener prefijos o sufijos. 
 
-                \item Lemmatizing: La lematización es un proceso lingüístico que consiste en, dada una forma flexionada (es decir, en plural, en femenino, conjugada, etc), hallar el lema correspondiente. El lema es la forma que por convenio se acepta como representante de todas las formas flexionadas de una misma palabra. Es decir, el lema de una palabra es la palabra que nos encontraríamos como entrada en un diccionario tradicional: singular para sustantivos, masculino singular para adjetivos, infinitivo para verbos. Por ejemplo, \emph{decir} es el lema de \emph{dije}, pero también de \emph{diré} o \emph{dijéramos}.
+                \item Lemmatizing: La lematización es un proceso lingüístico que consiste en, dada una forma flexionada (es decir, en plural, en femenino, conjugada, etc), hallar el lema correspondiente. El lema es la forma que por convenio se acepta como representante de todas las formas flexionadas de una misma palabra. Es decir, el lema de una palabra es la palabra que se encontraría como entrada en un diccionario tradicional: singular para sustantivos, masculino singular para adjetivos, infinitivo para verbos. Por ejemplo, \emph{decir} es el lema de \emph{dije}, pero también de \emph{diré} o \emph{dijéramos}.
                 
     	\end{enumerate}
 
@@ -287,7 +287,7 @@ def preprocess(document):
 %-----------------------------------------------------------------------------------
 	\subsection{Construcción del grafo}\label{sub:lists}
  
-        Para el experimento, se decidió construir un grafo no dirigido y ponderado. Todo grafo es un par de conjuntos V, E donde V contiene los vértices y E las aristas, en este caso, al ser no dirigido, no es relevante el orden en cada par de vértices que pertenece al conjunto E. Cada arista tiene una ponderación determinada por el algoritmo que describiremos adelante.
+        Para el experimento, se ha decidido construir un grafo no dirigido y ponderado. Un grafo es un par de conjuntos V, E donde V contiene los vértices y E las aristas, en este caso, al ser no dirigido, no es relevante el orden en cada par de vértices que pertenece al conjunto E. Cada arista tiene una ponderación determinada por el algoritmo que describiremos adelante.
 
         Para la construcción del grafo se ha utilizado la biblioteca \emph{networkx}.
         
@@ -315,7 +315,7 @@ class Content:
 		\end{figure}
         
         
-        El parámetro \emph{name} indica la lista de nombres asociados al contenido, ya preprocesados el texto de dichos nombres relacionados.  
+        El parámetro \emph{name} indica la lista de nombres asociados al contenido.
 
         El parámetro \emph{node-description} indica el nombre del contenido que hará que sea entendible la visualización del grafo.
 
@@ -371,7 +371,7 @@ class Content:
             \caption{Grado de relación de los contenidos. \label{fig:ex}}
 .        \end{figure}
 
-        Se observa cuáles son los contenidos que más interactúan con el resto a partir del grado. 
+        Se observa cuáles son los contenidos que más interac-túan con el resto a partir del grado de los vértices. 
         
         El grado con pesos describe, a partir de las ponderaciones de las aristas que relacionan dicho vértice con sus adyacentes, cuánto interactúa dicha temática con el resto.
 
@@ -428,7 +428,7 @@ class Content:
 %-----------------------------------------------------------------------------------
 \section{Conclusiones}\label{sec:conc}
 
-  A modo resumen:
+  A modo resumen, en la asignatura Matemática Numérica:
     \begin{enumerate}
         
         \item Contenidos más relacionados con el resto:
